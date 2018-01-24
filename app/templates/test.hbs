@@ -1,5 +1,10 @@
-{{!-- The following component displays Ember's default welcome message. --}}
-{{welcome-page}}
-{{!-- Feel free to remove this! --}}
+<h1>Route test</h1>
+{{input value=model.name}}
+<h2>Compétences</h2>
+<ul>
+  {{#each model.competences as |comp|}}
+    <li>{{comp}}</li>
+  {{/each}}
+</ul>
 
-{{outlet}}
+<p>Modification réalisée : {{model.name}}</p>
