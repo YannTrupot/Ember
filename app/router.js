@@ -12,6 +12,7 @@ Router.map(function() {
   });
   this.route('ex1');
   this.route('test.new');
+  this.route('ex2');
 });
 
 export default Router;
