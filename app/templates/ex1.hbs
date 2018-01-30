@@ -1,0 +1,17 @@
+<div class="panel panel-default" style="width:500px">
+<h4 style="text-align: center"> EXERCICE 1</h4>
+{{textarea value=model.content maxlength=model.MAX class="form-control"}}
+<br>
+  <div class="center-block">
+    <button class="btn btn-primary center-block" {{action "save" model}}> Enregistrer </button><br>
+    <button class="btn btn-primary center-block" {{action "clear" model}}> Effacer </button>
+  </div>
+<br>
+  <div class="alert alert-info alert-dismissible">Nombre de caractères restants : {{model.size}}</div>
+
+{{#if model.alertVisible}}
+  <div class="alert {{model.style}}" style="transition-duration: 2s">{{model.info}}</div>
+{{/if}}
+</div>
+
+{{outlet}}
