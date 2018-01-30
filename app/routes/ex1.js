@@ -5,7 +5,7 @@ import EmberObject, {computed} from '@ember/object';
 
 const Note = EmberObject.extend({
   MAX : 100,
-  content: 'Entrez votre texte',
+  content: '',
 
   size : computed('content', function () {
     let tailleAct = this.get('MAX')- this.get('content').length;
@@ -15,14 +15,7 @@ const Note = EmberObject.extend({
     return tailleAct
   }),
 
-  info: computed('content',function () {
-    let content = this.get('content');
-    if(content == 'Entrez votre texte'){
-      return '';
-    }else{
-      return 'Note modifiée';
-    }
-  }),
+  info: '',
 
   alertVisible: notEmpty('info'),
 
@@ -52,6 +45,7 @@ export default Route.extend({
     },
     clear:function (model) {
       model.set('content','');
+      model.set('info','');
     }
   }
 });
