@@ -20,9 +20,33 @@ const Services = EmberObject.extend({
       }
     });
     return cout;
+  }),
+
+  promo:'',
+
+  promos:{
+    "B22":0.05,
+    "AZ":0.01,
+    "UBOAT":0.02
+  },
+
+  txRemise: computed('promo',function () {
+    let promos = this.get('promos');
+    let promo = this.get('promo');
+    if(promos[promo]){
+      return promos[promo];
+    }
+    return 0;
+  }),
+
+  coutTotal:computed('promo','sumActive',function () {
+    let sum = this.get('sumActive');
+    let promo = 1-this.get('txRemise');
+    return sum*promo;
   })
 
 });
+
 
 export default Route.extend({
   model(){

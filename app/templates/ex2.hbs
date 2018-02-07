@@ -4,19 +4,26 @@
     {{#each model.services as |service index| }}
       {{#if service.active}}
           <div class="btn btn-primary active center-block" style="width: 500px;height: 40px;font-size: 20px;margin-bottom: 4px;" {{action "toggleActive" service}}>
-            {{service.name}}
-            ({{format-currency service.price}})
+            <span>{{service.name}}
+            <div class="badge">{{format-currency service.price symbol="€"}}</div>
+            </span>
           </div>
       {{else}}
         <div class="btn btn-secondary center-block" style="width: 500px;height: 40px;font-size: 20px;margin-bottom: 4px;border:solid 1px darkslategrey"{{action "toggleActive" service}}>
-          {{service.name}}
-          ({{format-currency service.price}})
+          <span> {{service.name}}
+          <div class="badge">{{format-currency service.price symbol="€"}}</div>
+            </span>
         </div>
       {{/if}}
     {{/each}}
+
   </div>
   <div class="dropdown-divider"></div>
   <div class="center-block" style="text-align: center">{{plural model.countActive}}</div>
-  <div class="center-block" style="text-align: center;font-size: 25px">Cout total : {{format-currency model.sumActive}}</div>
+  <div class="center-block" style="text-align: center">
+    Code promo {{input value=model.promo}}
+    <div class="badge">Remise de {{format-percent model.txRemise}}</div>
+  </div>
+<div class="center-block" style="text-align: center;font-size: 25px">Cout total : {{format-currency model.coutTotal symbol="€"}}</div>
 
 {{outlet}}
