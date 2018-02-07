@@ -5,22 +5,18 @@
       {{#if service.active}}
           <div class="btn btn-primary active center-block" style="width: 500px;height: 40px;font-size: 20px;margin-bottom: 4px;" {{action "toggleActive" service}}>
             {{service.name}}
-            ({{service.price}})
+            ({{format-currency service.price}})
           </div>
       {{else}}
         <div class="btn btn-secondary center-block" style="width: 500px;height: 40px;font-size: 20px;margin-bottom: 4px;border:solid 1px darkslategrey"{{action "toggleActive" service}}>
           {{service.name}}
-          ({{service.price}})
+          ({{format-currency service.price}})
         </div>
       {{/if}}
-
-    <!--<button clas>
- btn btn-primary center-block " style="width:500px;height: 100px;font-size:24px;" {{action "" model}}> </button>
-    -->
     {{/each}}
   </div>
   <div class="dropdown-divider"></div>
-  <div class="center-block" style="text-align: center">{{model.countActive}} services selectionnés</div>
-  <div class="center-block" style="text-align: center;font-size: 25px">Cout total : {{model.sumActive}}</div>
+  <div class="center-block" style="text-align: center">{{plural model.countActive}}</div>
+  <div class="center-block" style="text-align: center;font-size: 25px">Cout total : {{format-currency model.sumActive}}</div>
 
 {{outlet}}
