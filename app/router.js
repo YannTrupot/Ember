@@ -10,9 +10,12 @@ Router.map(function() {
   this.route('test', function() {
     this.route('new');
   });
-  this.route('ex1');
+  this.route('td1-ex1');
   this.route('test.new');
-  this.route('ex2');
+  this.route('td1-ex2');
+  this.route('td2-ex1', function() {
+    this.route('step');
+  });
 });
 
 export default Router;
