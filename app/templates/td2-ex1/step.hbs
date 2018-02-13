@@ -1,17 +1,17 @@
-<div class="container">
+<div class="container center-block">
+  <div class="container center-block">
   <div class="container" style="width: 500px;float: left;padding: 2px;">
 
     {{multi-select elements=model.dispoItems
                    selectedIds=model.selectedDispoItemsIds}}
 
-
   </div>
 
   <div class="container" style="width: 45px;float: left;padding: 2px;">
-    <button class="btn btn-primary" style="width: 100%;height: 45px"> <span class="glyphicon glyphicon-step-backward" {{ action "addTo" model.includedItems model.dispoItems model.selectedIncludedItems }}></span> </button><br>
-    <button class="btn btn-primary" style="width: 100%;height: 45px"> <span class="glyphicon glyphicon-step-forward"  {{ action "addTo" model.dispoItems model.includedItems model.selectedDispoItems }}></span> </button><br>
-    <button class="btn btn-primary" style="width: 100%;height: 45px"> <span class="glyphicon glyphicon-fast-backward"></span> </button><br>
-    <button class="btn btn-primary" style="width: 100%;height: 45px"> <span class="glyphicon glyphicon-fast-forward"></span> </button>
+    <button class="btn btn-primary" style="width: 100%;height: 45px" {{ action "addTo" model.includedItems model.dispoItems model.selectedIncludedItems }}> <span class="glyphicon glyphicon-step-backward" ></span> </button><br>
+    <button class="btn btn-primary" style="width: 100%;height: 45px" {{ action "addTo" model.dispoItems model.includedItems model.selectedDispoItems }}> <span class="glyphicon glyphicon-step-forward" ></span> </button><br>
+    <button class="btn btn-primary" style="width: 100%;height: 45px" {{ action "addTo" model.includedItems model.dispoItems model.includedItems }}> <span class="glyphicon glyphicon-fast-backward"></span> </button><br>
+    <button class="btn btn-primary" style="width: 100%;height: 45px" {{ action "addTo" model.dispoItems model.includedItems model.dispoItems }}> <span class="glyphicon glyphicon-fast-forward"></span> </button>
   </div>
 
   <div class="container" style="width: 500px;float: left;padding: 2px;">
@@ -19,6 +19,13 @@
     {{multi-select elements=model.includedItems
                    selectedIds=model.selectedIncludedItemsIds}}
 
+  </div>
+</div><br>
+  <div class="text">
+    {{ model.nbItemsIncluded }} element(s) séléctionné(s)
+  </div>
+  <div class="container">
+    <button value="2" class="btn btn-primary" style="width:100%;text-align: right;height: 50px;font-size: 20px;"><span class="glyphicon glyphicon-arrow-right"> </span> Etape suivante</button>
   </div>
 </div>
 {{outlet}}

@@ -12,6 +12,9 @@ const Listes = EmberObject.extend({
   }),
   selectedIncludedItems: computed('selectedIncludedItemsIds.[]',function () {
     return this.get('selectedIncludedItemsIds').map((id) =>this.get('includedItems').findBy('id',id));
+  }),
+  nbItemsIncluded:computed('includedItems.[]',function () {
+    return this.get('includedItems').length;
   })
 });
 
