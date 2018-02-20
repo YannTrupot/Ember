@@ -1,0 +1,30 @@
+
+<div class="container" style="border: solid dodgerblue 2px;border-radius: 10px;min-height: 300px;padding: 0">
+
+  <div class="container-fluid" style="background-color: dodgerblue;color: #fff;font-size: 16px; padding: 10px;">Contacts</div>
+  <div class="container" style="padding: 10px;">
+  <div class="container-fluid" style="margin-top:16px;padding: 0">
+    <div class="input-group">
+      <input type="text" class="form-control" placeholder="Filtre">
+    </div>
+  </div>
+
+  <table class="table" style="margin-top:16px; border: solid lightgrey 2px">
+    {{#each model.datas as |contact| }}
+        <tr>
+          <td style="color:grey">{{ contact.nom }}</td>
+          <td style="color:grey">{{ contact.prenom }}</td>
+          <td style="color:grey">{{ contact.email }}</td>
+          <td style="width: 15px;"><button class="btn btn-dark" {{ action 'delete' contact }}>X</button></td>
+        </tr>
+    {{/each}}
+  </table>
+    <button class="btn btn-primary"style="min-width: 120px;" onclick="window.location.href = '/td3-contacts/add'"> Ajouter </button>
+
+
+
+  </div>
+
+</div>
+
+{{outlet}}

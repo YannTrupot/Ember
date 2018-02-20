@@ -16,6 +16,8 @@ Router.map(function() {
   this.route('td2-ex1', function() {
     this.route('step');
   });
+  this.route('td3-contacts/add');
+  this.route('td3-contacts');
 });
 
 export default Router;

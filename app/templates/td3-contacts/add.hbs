@@ -1,0 +1,28 @@
+<div class="container">
+  <br>
+  <h2 class="h2"> Nouveau contact</h2>
+  <br>
+  <form>
+
+    <div class="form-group">
+      <label for="nom">Nom</label>
+      {{ input value = model.nom id="nom" class="form-control"}}
+    </div>
+
+    <div class="form-group">
+      <label for="prenom">Prenom</label>
+      {{ input value = model.prenom id="prenom" class="form-control"}}
+    </div>
+
+    <div class="form-group">
+      <label for="email">Email</label>
+      {{ input value = model.email id="email" class="form-control"}}
+    </div>
+    <br>
+    <button class="btn btn-primary container-fluid" style="margin-bottom: 5px" {{ action 'addContact' model }}>Créer le contact</button>
+    <button type="reset" class="btn btn-secondary container-fluid" style="margin-bottom: 5px">Reinitialiser</button>
+  </form>
+    <button class="btn btn-dark container-fluid" style="margin-bottom: 5px" onClick="window.location.href = '/td3-contacts'">Retour à la liste</button>
+
+</div>
+{{outlet}}
