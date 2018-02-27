@@ -1,7 +1,7 @@
 import DS from 'ember-data';
 import { pluralize } from 'ember-inflector';
 
-var Adapater=DS.RESTAdapter.extend({
+var Adapter=DS.RESTAdapter.extend({
   ajaxOptions: function(url, type, options) {
     var hash = this._super(url, type, options);
     if (type == 'POST' || type=='PUT') {
@@ -17,4 +17,4 @@ var Adapater=DS.RESTAdapter.extend({
   }
 });
 
-export default Adapater;
+export default Adapter;

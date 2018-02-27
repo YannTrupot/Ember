@@ -25,8 +25,8 @@
     {{#each model.datas as |dev| }}
       <tr>
         <td style="color:grey">{{ dev.Identity }}</td>
-        <td style="width: 15px;"><button class="btn btn-dark" {{ action 'edit' dev }}>E</button></td>
-        <td style="width: 15px;"><button class="btn btn-dark" {{ action 'delete' dev }}>X</button></td>
+        <td style="width: 15px;"><button class="btn btn-dark" {{ action 'edit' dev }}> EDIT </button></td>
+        <td style="width: 15px;"><button class="btn btn-dark" {{ action 'delete' dev }}> DELETE </button></td>
       </tr>
     {{/each}}
     </tbody>
