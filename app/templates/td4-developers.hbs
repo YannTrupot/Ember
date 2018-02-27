@@ -1,0 +1,36 @@
+<div class="container" >
+
+  <div class="btn-group">
+    <button type="button" class="btn btn-light" style="padding: 20px">Home</button>
+    <button type="button" class="btn btn-light" style="padding: 20px">Projects</button>
+    <button type="button" class="btn btn-light" style="padding: 20px">Developers</button>
+  </div>
+
+  <div class="h2" style="margin-top: 10px; margin-bottom: 10px">
+    models\Developers
+  </div>
+  <div class="input-group" style="margin-top: 10px; margin-bottom: 10px">
+    <button class="btn" style="padding: 10px; background-color: orange;color: #fff;font-size: 20px" onclick="window.location.href = '/td4-developers/new'"> + Add new models\Developers...</button>
+  </div>
+
+  <table class="table">
+    <thead>
+    <tr>
+      <th scope="col">Identity</th>
+      <th></th>
+      <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    {{#each model.datas as |dev| }}
+      <tr>
+        <td style="color:grey">{{ dev.Identity }}</td>
+        <td style="width: 15px;"><button class="btn btn-dark" {{ action 'edit' dev }}>E</button></td>
+        <td style="width: 15px;"><button class="btn btn-dark" {{ action 'delete' dev }}>X</button></td>
+      </tr>
+    {{/each}}
+    </tbody>
+  </table>
+
+</div>
+{{outlet}}

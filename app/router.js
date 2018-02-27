@@ -18,6 +18,8 @@ Router.map(function() {
   });
   this.route('td3-contacts/add');
   this.route('td3-contacts');
+  this.route('td4-developers');
+  this.route('td4-developers/new');
 });
 
 export default Router;

@@ -1,0 +1,15 @@
+<div class="container">
+  <div class="h2">
+    Add Developer
+  </div>
+  <br>
+  <div class="input-group">
+    {{ input value = model.name id="Identity" class="form-control"}}
+  </div>
+  <br>
+  <button class="btn btn-primary container-fluid" {{ action 'addDeveloper' model }}>Ajouter</button>
+
+
+</div>
+
+{{outlet}}
